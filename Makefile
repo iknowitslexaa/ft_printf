@@ -26,8 +26,8 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 		${MAKE} -C ${LIBFT_DIR}
-		cp ${LIBFT} ${NAME}
-		${CC} ${CFLAGS} ${OBJS} ${LIBFT} -o ${NAME}
+		mv ${LIBFT} .
+		ar rcs ${NAME} ${OBJS} libft.a
 
 clean:
 	${MAKE} -C ${LIBFT_DIR} clean
@@ -35,7 +35,7 @@ clean:
 
 fclean: clean
 		${MAKE} -C ${LIBFT_DIR} fclean
-		${RM} ${NAME}
+		${RM} ${NAME} libft.a
 
 re: fclean all
 
