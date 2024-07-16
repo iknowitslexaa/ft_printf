@@ -45,6 +45,7 @@ int	ft_printf(const char *s, ...)
 	return (return_value);	
 }
 
+
 /*int	main(void)
 {
 	int		res = 0;
