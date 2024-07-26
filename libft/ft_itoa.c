@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 static char	*makestr(long int num, char *nbr, size_t size)
 {
@@ -71,7 +71,7 @@ char	*ft_itoa(int n)
 	return (nbr);
 }
 
-/*int	main()
-{
-	printf("%s", ft_itoa(-2147483647 -1));
-}*/
+// int	main()
+// {
+// 	printf("%s", ft_itoa(-2147483647 -1));
+// }

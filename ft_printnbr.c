@@ -6,16 +6,16 @@
 /*   By: aneiva-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:44:31 by aneiva-d          #+#    #+#             */
-/*   Updated: 2024/06/28 16:02:10 by aneiva-d         ###   ########.fr       */
+/*   Updated: 2024/07/13 15:12:59 by aneiva-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int	ft_printnbr(int i)
 {
-	int	return_value;
+	int		return_value;
 	char	*nbr;
 
 	return_value = 0;
@@ -25,11 +25,11 @@ int	ft_printnbr(int i)
 	return (return_value);
 }
 
-/*int	main()
-{
-	int	c;
-	int	d;
-	c = 23475;
-	d = ft_printnbr(c);
-	printf("\n%i", d);
-}*/
+// int	main()
+// {
+// 	int	c;
+// 	int	d;
+// 	c = 23475;
+// 	d = ft_printnbr(c);
+// 	printf("\n%i", d);
+// }

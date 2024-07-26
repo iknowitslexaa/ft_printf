@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	check_format(va_list args, char c)
 {
@@ -19,10 +19,8 @@ int	check_format(va_list args, char c)
 	return_value = 0;
 	if (c == 'c')
 		return_value += ft_printchar(va_arg(args, int));
-	if (c == 's')
-		return_value += ft_printstr(va_arg(args, char *));
 	if (c == 'p')
-		return_value += ft_printptr(va_arg(args, unsigned long));
+		return_value += ft_printptr(va_arg(args, unsigned long long));
 	if (c == 'd' || c == 'i')
 		return_value += ft_printnbr(va_arg(args, int));
 	if (c == 'u')
@@ -31,5 +29,7 @@ int	check_format(va_list args, char c)
 		return_value += ft_printhexa(va_arg(args, unsigned int), c);
 	if (c == '%')
 		return_value += ft_printchar('%');
+	if (c == 's')
+		return_value += ft_printstr(va_arg(args, char *));
 	return (return_value);
 }

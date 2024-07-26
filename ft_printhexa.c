@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	hexa_len(unsigned int n)
 {
 	int	len;
 
 	len = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		len++;
@@ -42,6 +44,11 @@ int	ft_printhexa(unsigned int i, char c)
 {
 	int	return_value;
 
+	if (i == 0)
+	{
+		ft_printchar('0');
+		return (1);
+	}
 	ft_helphexa(i, c);
 	return_value = hexa_len(i);
 	return (return_value);

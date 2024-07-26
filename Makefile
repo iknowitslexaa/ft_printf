@@ -26,15 +26,20 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 		${MAKE} -C ${LIBFT_DIR}
-		mv ${LIBFT} .
-		ar rcs ${NAME} ${OBJS} libft.a
+		cp ${LIBFT} $(NAME)
+		ar rcs ${NAME} ${OBJS}
+		ranlib $(NAME)
+#		cc $(FLAGS) $(OBJS) $(NAME)
+
+%.o: $(SOURCES)/%.c
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	${MAKE} -C ${LIBFT_DIR} clean
+	${MAKE} clean -C ${LIBFT_DIR}
 	${RM} ${OBJS}
 
 fclean: clean
-		${MAKE} -C ${LIBFT_DIR} fclean
+		${MAKE} fclean -C ${LIBFT_DIR}
 		${RM} ${NAME} libft.a
 
 re: fclean all

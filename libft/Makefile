@@ -36,7 +36,7 @@ ${NAME}: ${OBJS}
 		ar rc ${NAME} ${OBJS}
 
 %.o: %.c
-		${CC} -c ${CFLAGS} $?
+		${CC} -c ${CFLAGS} -c $< -o $@
 
 bonus: all $(BONUS_OBJ)
 		ar rc ${NAME} ${BONUS_OBJ}
@@ -49,4 +49,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:  all clean fclean re
+.PHONY:  all clean fclean re bonus

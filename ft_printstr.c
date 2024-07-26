@@ -6,11 +6,23 @@
 /*   By: aneiva-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 15:39:56 by aneiva-d          #+#    #+#             */
-/*   Updated: 2024/06/28 15:43:37 by aneiva-d         ###   ########.fr       */
+/*   Updated: 2024/07/26 14:40:15 by aneiva-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
 
 int	ft_printstr(char *s)
 {
@@ -19,6 +31,11 @@ int	ft_printstr(char *s)
 
 	i = 0;
 	return_value = 0;
+	if (s == NULL)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	while (s[i] != '\0')
 	{
 		return_value += ft_printchar(s[i]);
